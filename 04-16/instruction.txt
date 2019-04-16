@@ -1,0 +1,7 @@
+Szia!
+
+Betűket fogsz látni a képernyőn.
+Ha van köztük F betű, nyomd meg az i gombot.
+Ha nincs köztük F betű, nyomd meg az n gombot.
+
+Bármelyik gombbal indulhat a kísérlet.
