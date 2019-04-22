@@ -28,6 +28,7 @@ def instr_press(event):
   generate_stimuli()
   next()
   window.bind('<KeyPress>', stimuli_press)
+  window.focus_set()
 
 def generate_stimuli():
   global stimuli
@@ -45,6 +46,10 @@ def reset_available_positions():
 def next():
   global stimuli
   global available_position
+
+  for slave in window.grid_slaves():
+    slave.destroy()
+
   reset_available_positions()
   random.shuffle(available_position)
   stimulus = stimuli.pop()
@@ -59,7 +64,10 @@ def next():
 
 def stimuli_press(event):
   if event.keysym in keys:
-    next()
+    if stimuli:
+      next()
+    else:
+      window.destroy()
 
 root = tkinter.Tk()
 root.title('Visual search')
